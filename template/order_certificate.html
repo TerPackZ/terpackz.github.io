@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Заказ справки{% endblock %}
+{% block content %}
+  <h1>📄 Заказать справку</h1>
+  <form method="POST">
+    <div class="form-group">
+      <label>Тип справки</label>
+      <select name="cert_type" required>
+        <option value="">— Выберите —</option>
+        <option value="enrollment">Справка об обучении</option>
+        <option value="military">Для военкомата</option>
+        <option value="visa">Для визы</option>
+        <option value="academic">Об успеваемости</option>
+        <option value="other">Иная справка</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Цель получения (если нужно)</label>
+      <input type="text" name="purpose" placeholder="Например: для посольства Германии">
+    </div>
+    <div class="form-group">
+      <label>Способ получения</label>
+      <select name="delivery" required>
+        <option value="email">Электронно на почту</option>
+        <option value="office">Получить в офисе</option>
+      </select>
+    </div>
+    <button type="submit">Заказать справку</button>
+  </form>
+{% endblock %}
